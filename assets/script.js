@@ -21,11 +21,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
 		}
 	]
 	
+
 	const chemin= "./assets/images/slideshow/";
 	let fichier=chemin;
 	let slide = 0;
-	
-	function affichedot(slide){
+
+	/*Function "affiche" is used to change the value of the source of the image
+	, it's change also the html text below the image and finally the
+	function use a loop with condition  to select or unselecte dot */ 
+	function affiche(slide){
 		
 		
 		
@@ -53,15 +57,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
 	 
 	document.querySelector (".arrow_left").addEventListener ("click", ()=> {
 		console.log ("arrow_left")
-		
+	/*This function update the array's index */	
 		if (slide>0){slide--;}else{slide=slides.length-1;}
-		affichedot(slide);
+		affiche(slide);
 		})
 	
 	document.querySelector (".arrow_right").addEventListener ("click", ()=> {
 			console.log ("arrow_right")
+	/*This function update the array's index */	
 			if (slide<slides.length-1){slide++;}else{slide=0;}
-			affichedot(slide);
+			affiche(slide);
 			})
 })
 	
